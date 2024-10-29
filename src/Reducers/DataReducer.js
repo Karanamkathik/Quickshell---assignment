@@ -1,4 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
+
 export const DataReducer = createReducer({}, {
     DATA_REQUEST: (state) => {
         state.loading = true;

@@ -13,6 +13,24 @@ import {
 } from "react-icons/bs";
 import "./DashBoard.css";
 import Card from "../Card/Card";
+
+
+
+
+
+
+const UrgentIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M3 1C1.91067 1 1 1.91067 1 3V13C1 14.0893 1.91067 15 3 15H13C14.0893 15 15 14.0893 15 13V3C15 1.91067 14.0893 1 13 1H3ZM7 4H9L8.75391 8.99836H7.25L7 4ZM9 11C9 11.5523 8.55228 12 8 12C7.44772 12 7 11.5523 7 11C7 10.4477 7.44772 10 8 10C8.55228 10 9 10.4477 9 11Z"
+      fill="#5C5C5E"
+    />
+  </svg>
+);
+
+
 const DashBoard = () => {
   const isStatus = localStorage.getItem("group") === "status";
   const isPriority = localStorage.getItem("group") === "priority";
@@ -118,7 +136,7 @@ const DashBoard = () => {
                           />
                         </svg>
                       ) : element[index].title === "Urgent" ? (
-                        <BsFillExclamationSquareFill />
+                        <UrgentIcon />
                       ) : (
                         <p></p>
                       )}
@@ -130,9 +148,20 @@ const DashBoard = () => {
                     {element[index]?.title} {element[index].value?.length}
                   </span>
                 </div>
-                <div className="rightView">
+                <div className="rightView"
+                 style={{ 
+                  display: 'flex',
+
+                  alignItems: 'center',
+                  gap: '4px'  // This adds consistent spacing between the plus icon and dots
+                }}
+                >
                   <AiOutlinePlus />{" "}
-                  <span style={{ letterSpacing: "2px" }}>...</span>
+                  <span style={{ letterSpacing: "2px" ,
+      display: 'flex',
+      alignItems: 'center',
+      lineHeight: 1,  // This ensures the dots stay aligned
+      height: '20px'}}>...</span>
                 </div>
               </div>
               <div className="dashList flex-gap-10">
@@ -170,7 +199,7 @@ const DashBoard = () => {
               </div>
               <div className="rightView">
                 <AiOutlinePlus />{" "}
-                <span style={{ letterSpacing: "2px" }}>...</span>
+                <span style={{ letterSpacing: "2px"}}>...</span>
               </div>
             </div>
             <div className="dashCardHeading flex-sb">
@@ -182,6 +211,7 @@ const DashBoard = () => {
                     height: "9px",
                     display: "inline-block",
                     fontWeight: 200,
+                    alignItems: 'center'
                   }}
                 >
                   <MdCancel style={{ color: "grey" }} />

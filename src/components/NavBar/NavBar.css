@@ -1,3 +1,15 @@
+.top-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background-color: #fff;
+}
+
 .selectGroup {
     padding: 2.5px;
     width: auto;
@@ -5,8 +17,20 @@
 
 .displayButton {
     position: relative;
+    
+   
 }
-
+.p-10 {
+    display: flex;
+    
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    box-shadow: 0 0 0.25rem #12121242;
+    background-color: #fff;
+    cursor: pointer;
+}
 .dropOnClick {
     position: absolute;
     width: 220px;

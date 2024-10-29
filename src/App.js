@@ -15,8 +15,8 @@ const App = () => {
   return allTickets ? (
     <div style={{ paddingTop: "10px" }} >
       <NavBar />
-      <hr style={{ marginTop: "10px" }} />
-      <DashBoard />
+      
+      <DashBoard  style={{ marginTop:'10px'}}/>
     </div>
   ) : <Loading />
 }
