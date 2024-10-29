@@ -7,7 +7,7 @@ const Loading = ({
   showCircles = true,
   circleSize = 100,
   circleColor = "#4fa94d",
-  textColor = "green",
+  textColor = "gray",
   textStyle = {},
 }) => {
   return (
